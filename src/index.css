@@ -22,3 +22,13 @@
     format("truetype");
 }
 
+@font-face {
+  font-family: "docade";
+  src: url("./assets/fonts/docade-regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "code";
+  src: url("./assets/fonts/CourierPrime/CourierPrime-Regular.ttf")
+    format("truetype");
+}
