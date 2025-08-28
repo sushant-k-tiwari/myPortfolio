@@ -9,7 +9,7 @@ const GridBackground: React.FC = () => {
           linear-gradient(to right, rgba(0,0,0,0.08) 1px, transparent 1px),
           linear-gradient(to bottom, rgba(0,0,0,0.08) 1px, transparent 1px)
         `,
-        backgroundSize: "32px 32px",
+        backgroundSize: "48px 48px",
       }}
     />
   );

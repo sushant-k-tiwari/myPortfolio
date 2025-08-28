@@ -6,6 +6,19 @@
 }
 
 @font-face {
-    font-family: "vm-regular";
-    src: url("./assets/fonts/VictorMono/VictorMono-Medium.ttf") format("truetype");
+  font-family: "vm-regular";
+  src: url("./assets/fonts/VictorMono/VictorMono-Medium.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "vm-bold-italic";
+  src: url("./assets/fonts/VictorMono/VictorMono-BoldItalic.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "vm-medium-italic";
+  src: url("./assets/fonts/VictorMono/VictorMono-MediumItalic.ttf")
+    format("truetype");
+}
+
