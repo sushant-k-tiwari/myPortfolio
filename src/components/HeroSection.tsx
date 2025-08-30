@@ -12,7 +12,7 @@ const HeroSection = () => {
         {`> `}React Native App Developer
       </h2>
       <div className="w-[50%]">
-        <p className="text-md font-[vm-regular] p-6">
+        <p className="text-md font-[vm-regular] p-6 text-neutral-400">
           Hi, I'm <span className="p-1 bg-black text-white">Sushant</span>, a
           passionate and performance-driven App Developer with a strong
           foundation in Computer Science and Engineering, graduated with a Gold
@@ -22,10 +22,10 @@ const HeroSection = () => {
         </p>
       </div>
       <div className="flex gap-8 font-[vm-medium-italic]">
-        <button className="px-8 py-2 bg-black text-white rounded-md cursor-pointer">
+        <button className="px-8 py-2 bg-black text-white rounded-md cursor-pointer transition-transform duration-200 ease-in hover:scale-102 ">
           View Projects
         </button>
-        <button className="px-8 py-2 bg-transperant border-neutral-200 border-2 rounded-md cursor-pointer">
+        <button className="px-8 py-2 bg-transperant border-neutral-200 border-2 rounded-md cursor-pointer transition-transform duration-200 ease-in hover:scale-102">
           Download CV
         </button>
       </div>
@@ -39,33 +39,6 @@ const HeroSection = () => {
         <button className="h-[48px] w-[48px] flex justify-center items-center bg-transparent border-2 border-neutral-200 cursor-pointer">
           <Mail size={24} />
         </button>
-      </div>
-      <div className="w-[80%]">
-        <p className="font-[vm-regular] mt-16">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-          veritatis accusamus obcaecati reprehenderit dolorem voluptatem
-          possimus enim in animi quibusdam officiis earum a esse explicabo natus
-          quaerat error eaque cumque, fugiat odio blanditiis voluptas modi
-          consequatur excepturi. Natus alias porro adipisci praesentium earum,
-          soluta ab doloribus quibusdam deserunt repellat aut tempore sit
-          tempora magnam sapiente. Labore doloremque dolorem soluta rerum quae
-          illum est, nemo dignissimos dicta ex aspernatur cum veniam sunt et!
-          Alias corporis beatae eaque error harum. Alias mollitia in,
-          voluptatibus eius quod et amet quam esse tempore nostrum, nulla
-          necessitatibus libero aspernatur odit nisi. Voluptates, quam sit
-          recusandae sapiente accusantium a aperiam cupiditate aliquid
-          praesentium repellendus expedita explicabo voluptate facere! Quam
-          alias quos tempore excepturi, odit assumenda, dicta voluptate ad porro
-          sit aperiam dolor iusto libero pariatur repudiandae esse iste
-          doloremque illum consequuntur autem, facilis eaque omnis eligendi.
-          Similique laudantium iusto tenetur non? Provident consequatur nostrum
-          quas totam magni adipisci non. Tempora deserunt explicabo iusto
-          incidunt perferendis corrupti. Culpa expedita quasi ducimus doloribus
-          magni molestiae voluptatibus error reiciendis asperiores saepe nulla
-          hic, deserunt, ut a repellendus laborum laboriosam modi earum vero
-          sapiente fugiat. Illo eius quibusdam corrupti tenetur, non beatae
-          error ipsam temporibus vitae consectetur! A, quae beatae? lorem500
-        </p>
       </div>
     </div>
   );

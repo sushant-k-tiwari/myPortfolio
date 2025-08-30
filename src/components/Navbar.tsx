@@ -7,7 +7,7 @@ const Navbar = () => {
         className=" flex flex-row justify-between p-4 px-[144px]
       "
       >
-        <div className="text-3xl font-[vm-bold]">SUSHANT PORTFOLIO</div>
+        <div className="text-3xl font-[vm-bold]">SUSHANT's PORTFOLIO</div>
         <ul className="flex flex-row gap-8 font-[vm-regular]">
           <li>
             <a href="#home" className="hover:text-teal-600 transition-colors">
