@@ -23,6 +23,10 @@
 }
 
 @font-face {
+  font-family: "vm-thin";
+  src: url("./assets/fonts/VictorMono/VictorMono-Thin.ttf") format("truetype");
+}
+@font-face {
   font-family: "docade";
   src: url("./assets/fonts/docade-regular.ttf") format("truetype");
 }
