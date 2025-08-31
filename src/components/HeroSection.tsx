@@ -22,21 +22,21 @@ const HeroSection = () => {
         </p>
       </div>
       <div className="flex gap-8 font-[vm-medium-italic]">
-        <button className="px-8 py-2 bg-black text-white rounded-md cursor-pointer transition-transform duration-200 ease-in hover:scale-102 ">
+        <button className="px-8 py-2 bg-black text-white rounded-md cursor-pointer transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
           View Projects
         </button>
-        <button className="px-8 py-2 bg-transperant border-neutral-200 border-2 rounded-md cursor-pointer transition-transform duration-200 ease-in hover:scale-102">
+        <button className="px-8 py-2 bg-transperant border-neutral-200 border-2 rounded-md cursor-pointer transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
           Download CV
         </button>
       </div>
       <div className="gap-8 flex mt-8">
-        <button className="h-[48px] w-[48px] flex justify-center items-center bg-transparent border-2 border-neutral-200 cursor-pointer">
+        <button className="h-[48px] w-[48px] flex justify-center items-center bg-transparent border-2 border-neutral-200 cursor-pointer transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
           <Github size={24} />
         </button>
-        <button className="h-[48px] w-[48px] flex justify-center items-center bg-transparent border-2 border-neutral-200 cursor-pointer">
+        <button className="h-[48px] w-[48px] flex justify-center items-center bg-transparent border-2 border-neutral-200 cursor-pointer transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
           <Linkedin size={24} />
         </button>
-        <button className="h-[48px] w-[48px] flex justify-center items-center bg-transparent border-2 border-neutral-200 cursor-pointer">
+        <button className="h-[48px] w-[48px] flex justify-center items-center bg-transparent border-2 border-neutral-200 cursor-pointer transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
           <Mail size={24} />
         </button>
       </div>

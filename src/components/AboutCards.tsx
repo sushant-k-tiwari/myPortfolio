@@ -2,7 +2,7 @@ import React, { type PropsWithChildren } from "react";
 
 const AboutCards = ({ children }: PropsWithChildren) => {
   return (
-    <div className="w-[256px] h-[206px] p-6 border-2 border-neutral-200 bg-white transition-transform duration-200 ease-in-out hover:scale-102 hover:border-r-neutral-800 hover:border-b-neutral-800 hover:border-4">
+    <div className="w-[256px] h-[206px] p-6 border-2 border-neutral-200 bg-white transition-transform duration-300 ease-in-out hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
       {children}
     </div>
   );
