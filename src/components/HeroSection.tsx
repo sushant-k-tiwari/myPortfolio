@@ -25,18 +25,40 @@ const HeroSection = () => {
         <button className="px-8 py-2 bg-black text-white rounded-md cursor-pointer transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
           View Projects
         </button>
-        <button className="px-8 py-2 bg-transperant border-neutral-200 border-2 rounded-md cursor-pointer transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
+        <a
+          href="../assets/Resume/Resume_Sushant.pdf"
+          download="Resume_Sushant.pdf"
+          className="px-8 py-2 bg-transperant border-neutral-200 border-2 rounded-md cursor-pointer transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]"
+        >
           Download CV
-        </button>
+        </a>
       </div>
       <div className="gap-8 flex mt-8">
-        <button className="h-[48px] w-[48px] flex justify-center items-center bg-transparent border-2 border-neutral-200 cursor-pointer transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
+        <button
+          className="h-[48px] w-[48px] flex justify-center items-center bg-transparent border-2 border-neutral-200 cursor-pointer transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]"
+          onClick={() => {
+            window.open("https://github.com/sushant-k-tiwari", "_blank");
+          }}
+        >
           <Github size={24} />
         </button>
-        <button className="h-[48px] w-[48px] flex justify-center items-center bg-transparent border-2 border-neutral-200 cursor-pointer transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
+        <button
+          className="h-[48px] w-[48px] flex justify-center items-center bg-transparent border-2 border-neutral-200 cursor-pointer transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]"
+          onClick={() => {
+            window.open(
+              "https://linkedin.com/in/sushant-kumar-tiwari",
+              "_blank"
+            );
+          }}
+        >
           <Linkedin size={24} />
         </button>
-        <button className="h-[48px] w-[48px] flex justify-center items-center bg-transparent border-2 border-neutral-200 cursor-pointer transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
+        <button
+          className="h-[48px] w-[48px] flex justify-center items-center bg-transparent border-2 border-neutral-200 cursor-pointer transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]"
+          onClick={() => {
+            window.open("mailto:sushant22tiwari801@gmail.com", "_blank");
+          }}
+        >
           <Mail size={24} />
         </button>
       </div>
