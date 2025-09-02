@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import TerminalCard from "./components/TerminalCard";
 import AboutSection from "./components/AboutSection";
+import Experience from "./components/Experience";
+import Skills from "./components/Skills";
 
 const App = () => {
   return (
@@ -19,6 +21,8 @@ const App = () => {
           Ready to collaborate on the next big idea!
         </TerminalCard.Body>
       </TerminalCard>
+      <Skills />
+      <Experience />
     </div>
   );
 };
