@@ -9,14 +9,16 @@ const AboutSection = () => {
       </h1>
       <h1 className="text-5xl font-[docade] drop-shadow-2xl">ABOUT.TXT</h1>
       <div className="w-[50%]">
-        <p className="text-md font-[vm-regular] p-6 text-neutral-400 mt-4">
-          I'm a passionate software developer with a love for creating digital
-          experiences that matter. My journey in tech started with curiosity and
-          has evolved into a commitment to building softwares and solutions that
-          bridge creativity and functionality.
+        <p className="text-md font-[vm-regular] p-6 text-neutral-400 mt-12 tracking-wide">
+          I've worked with innovative teams at Lagoon Works and Bytecraft
+          Studios, where I focused on optimizing performance, building
+          responsive apps, and integrating AI-driven features. Whether it's
+          enhancing load times, implementing lazy loading, or managing complex
+          data flows, I build solutions that are efficient, user-friendly, and
+          future-ready. Let's build something meaningful together.
         </p>
       </div>
-      <div className="flex justify-center items-center gap-8 mt-12 mb-12">
+      <div className="flex justify-center items-center gap-8 mt-12 mb-12 w-[80%]">
         <AboutCards>
           <AboutCards.Image>{`</>`}</AboutCards.Image>
           <AboutCards.Header>FRONTEND</AboutCards.Header>
