@@ -1,4 +1,4 @@
-import React, { type PropsWithChildren } from "react";
+import { type PropsWithChildren } from "react";
 
 const TerminalHeader = ({ children }: PropsWithChildren) => {
   return (
@@ -10,10 +10,12 @@ const TerminalHeader = ({ children }: PropsWithChildren) => {
 };
 
 const TerminalBody = ({ children }: PropsWithChildren) => {
-    return(
-        <div className="text-white text-sm font-[code] mt-4 flex justify-center">{children}</div>
-    )
-}
+  return (
+    <div className="text-white text-sm font-[code] mt-4 flex justify-center">
+      {children}
+    </div>
+  );
+};
 const TerminalCard = ({ children }: PropsWithChildren) => {
   return (
     <div className="flex justify-center items-center mb-24 ">

@@ -1,4 +1,3 @@
-import React from "react";
 import GridBackground from "./components/GridBackground";
 import Navbar from "./components/Navbar";
 

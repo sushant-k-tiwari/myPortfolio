@@ -1,4 +1,3 @@
-import React from "react";
 import { FaReact } from "react-icons/fa";
 import { ImHtmlFive2 } from "react-icons/im";
 import { SiJavascript, SiTailwindcss, SiTypescript } from "react-icons/si";

@@ -1,4 +1,3 @@
-import React from "react";
 import AboutCards from "./AboutCards";
 
 const AboutSection = () => {
