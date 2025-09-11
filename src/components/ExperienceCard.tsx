@@ -1,5 +1,5 @@
 import { BriefcaseIcon } from "lucide-react";
-import React, { type PropsWithChildren } from "react";
+import { type PropsWithChildren } from "react";
 
 interface Props {
   direction: "left" | "right";
@@ -43,8 +43,6 @@ const ExperienceCardCompany = ({ children }: PropsWithChildren) => {
 
 const ExperienceCardTech = ({ children }: PropsWithChildren) => {
   return (
-    //TODO: Add multiple tech in a row
-    
     <div className="mt-2 px-2 py-2 bg-neutral-400 text-white text-xs font-[code]">
       {children}
     </div>
@@ -55,4 +53,5 @@ ExperienceCard.Header = ExperienceCardHeader;
 ExperienceCard.Company = ExperienceCardCompany;
 ExperienceCard.Body = ExperienceCardBody;
 ExperienceCard.Tech = ExperienceCardTech;
+
 export default ExperienceCard;
