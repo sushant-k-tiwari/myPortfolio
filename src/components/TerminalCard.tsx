@@ -4,7 +4,14 @@ const TerminalHeader = ({ children }: PropsWithChildren) => {
   return (
     <div className="text-green-500 font-[code] text-lg flex flex-row mt-2 justify-center">
       {children}
-      <div className="text-white px-3">I AM ON A JOB HUNT</div>
+    </div>
+  );
+};
+
+const TerminalHeader2 = ({ children }: PropsWithChildren) => {
+  return (
+    <div className="text-white font-[code] text-lg flex flex-row ml-2 justify-center">
+      {children}
     </div>
   );
 };
@@ -27,6 +34,7 @@ const TerminalCard = ({ children }: PropsWithChildren) => {
 };
 
 TerminalCard.Header = TerminalHeader;
+TerminalCard.Header2 = TerminalHeader2;
 TerminalCard.Body = TerminalBody;
 
 export default TerminalCard;

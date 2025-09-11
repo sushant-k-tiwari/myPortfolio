@@ -1,6 +1,5 @@
 import GridBackground from "./components/GridBackground";
 import Navbar from "./components/Navbar";
-
 import HeroSection from "./components/HeroSection";
 import TerminalCard from "./components/TerminalCard";
 import AboutSection from "./components/AboutSection";
@@ -15,7 +14,10 @@ const App = () => {
       <HeroSection />
       <AboutSection />
       <TerminalCard>
-        <TerminalCard.Header>~$ CURRENT STATUS:</TerminalCard.Header>
+        <TerminalCard.Header>~$ CURRENT STATUS:
+
+        <TerminalCard.Header2>I AM ON A JOB HUNT</TerminalCard.Header2>
+        </TerminalCard.Header>
         <TerminalCard.Body>
           Ready to collaborate on the next big idea!
         </TerminalCard.Body>
