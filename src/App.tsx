@@ -24,6 +24,9 @@ const App = () => {
       </TerminalCard>
       <Skills />
       <Experience />
+      <div className="text-center text-neutral-500 font-[vm-medium-italic] text-4xl tracking-wide animate-bounce">
+        Work in Progress...
+      </div>
     </div>
   );
 };
