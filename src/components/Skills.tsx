@@ -19,37 +19,37 @@ const Skills = () => {
         </p>
       </div>
       <div className="w-[80%] mt-12 flex flex-row gap-4">
-        <div className="w-[150px] h-[150px] border-2 border-neutral-200 flex flex-col items-center p-4 transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
+        <div className="w-[150px] h-[150px] border-2 bg-white border-neutral-200 flex flex-col items-center p-4 transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
           <ImHtmlFive2 size={48} className="mt-3" />
           <p className="font-[code] text-lg mt-4">HTML</p>
         </div>
 
-        <div className="w-[150px] h-[150px] border-2 border-neutral-200 flex flex-col items-center p-4 transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
+        <div className="w-[150px] h-[150px] border-2 bg-white border-neutral-200 flex flex-col items-center p-4 transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
           <TbBrandCss3 size={48} className="mt-3" />
           <p className="font-[code] text-lg mt-4">CSS</p>
         </div>
 
-        <div className="w-[150px] h-[150px] border-2 border-neutral-200 flex flex-col items-center p-4 transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
+        <div className="w-[150px] h-[150px] border-2 bg-white border-neutral-200 flex flex-col items-center p-4 transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
           <SiJavascript size={48} className="mt-3" />
           <p className="font-[code] text-lg mt-4">JAVASCRIPT</p>
         </div>
 
-        <div className="w-[150px] h-[150px] border-2 border-neutral-200 flex flex-col items-center p-4 transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
+        <div className="w-[150px] h-[150px] border-2 bg-white border-neutral-200 flex flex-col items-center p-4 transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
           <SiTypescript size={48} className="mt-3" />
           <p className="font-[code] text-lg mt-4">TYPESCRIPT</p>
         </div>
 
-        <div className="w-[150px] h-[150px] border-2 border-neutral-200 flex flex-col items-center p-4 transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
+        <div className="w-[150px] h-[150px] border-2 bg-white border-neutral-200 flex flex-col items-center p-4 transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
           <FaReact size={48} className="mt-3" />
           <p className="font-[code] text-lg mt-4">REACT JS</p>
         </div>
 
-        <div className="w-[150px] h-[150px] border-2 border-neutral-200 flex flex-col items-center p-4 transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
+        <div className="w-[150px] h-[150px] border-2 bg-white border-neutral-200 flex flex-col items-center p-4 transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
           <TbBrandReactNative size={48} className="mt-3" />
           <p className="font-[code] text-lg mt-4 text-center">REACT NATIVE</p>
         </div>
 
-        <div className="w-[150px] h-[150px] border-2 border-neutral-200 flex flex-col items-center p-4 transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
+        <div className="w-[150px] h-[150px] border-2 bg-white border-neutral-200 flex flex-col items-center p-4 transition-transform duration-200 ease-in hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
           <SiTailwindcss size={48} className="mt-3" />
           <p className="font-[code] text-lg mt-4 text-center">TAILWINDCSS</p>
         </div>
