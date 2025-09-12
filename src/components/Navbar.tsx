@@ -1,4 +1,17 @@
 const Navbar = () => {
+  const handleScrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const navbarHeight = 80;
+      const elementPosition = element.offsetTop - navbarHeight;
+      
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <div className="sticky top-0 z-50 bg-white/30 backdrop-blur-md border-b border-white/20 shadow-sm">
       <div
@@ -8,38 +21,44 @@ const Navbar = () => {
         <div className="text-3xl font-[vm-bold]">SUSHANT's PORTFOLIO</div>
         <ul className="flex flex-row gap-8 font-[vm-regular]">
           <li>
-            <a href="#home" className="hover:text-teal-600 transition-colors">
+            <button 
+              onClick={() => handleScrollToSection('home')}
+              className="hover:text-teal-600 transition-colors cursor-pointer"
+            >
               Home
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#about" className="hover:text-teal-600 transition-colors">
+            <button 
+              onClick={() => handleScrollToSection('about')}
+              className="hover:text-teal-600 transition-colors cursor-pointer"
+            >
               About
-            </a>
+            </button>
           </li>
           <li>
-            <a
-              href="#experience"
-              className="hover:text-teal-600 transition-colors"
+            <button
+              onClick={() => handleScrollToSection('experience')}
+              className="hover:text-teal-600 transition-colors cursor-pointer"
             >
               Experience
-            </a>
+            </button>
           </li>
           <li>
-            <a
-              href="#projects"
-              className="hover:text-teal-600 transition-colors"
+            <button
+              onClick={() => handleScrollToSection('projects')}
+              className="hover:text-teal-600 transition-colors cursor-pointer"
             >
               Projects
-            </a>
+            </button>
           </li>
           <li>
-            <a
-              href="#contact"
-              className="hover:text-teal-600 transition-colors"
+            <button
+              onClick={() => handleScrollToSection('contact')}
+              className="hover:text-teal-600 transition-colors cursor-pointer"
             >
               Contact
-            </a>
+            </button>
           </li>
         </ul>
       </div>
