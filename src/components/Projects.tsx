@@ -1,5 +1,3 @@
-import React from "react";
-
 const Projects = () => {
   return (
     <div className="relative z-10 p-8 flex flex-col items-center">
@@ -22,7 +20,6 @@ const Projects = () => {
           meaningful digital experiences.
         </p>
       </div>
-      
     </div>
   );
 };
