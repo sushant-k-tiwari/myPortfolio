@@ -5,6 +5,7 @@ import TerminalCard from "./components/TerminalCard";
 import AboutSection from "./components/AboutSection";
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
+import Projects from "./components/Projects";
 
 const App = () => {
   return (
@@ -30,6 +31,11 @@ const App = () => {
       <section id="experience">
         <Experience />
       </section>
+
+      <section id="projects">
+        <Projects/>
+      </section>
+
       <div className="text-center text-neutral-500 font-[vm-medium-italic] text-4xl tracking-wide animate-bounce">
         Work in Progress...
       </div>
