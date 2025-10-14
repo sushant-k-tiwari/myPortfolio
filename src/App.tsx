@@ -6,6 +6,7 @@ import AboutSection from "./components/AboutSection";
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import { Contact } from "./components/Contact";
 
 const App = () => {
   return (
@@ -33,12 +34,16 @@ const App = () => {
       </section>
 
       <section id="projects">
-        <Projects/>
+        <Projects />
       </section>
 
-      <div className="text-center text-neutral-500 font-[vm-medium-italic] text-4xl tracking-wide animate-bounce">
+      <section id="contact">
+        <Contact />
+      </section>
+      {/* 
+      <div className="text-center text-neutral-500 font-[vm-medium-italic] text-6xl tracking-wide animate-bounce">
         Work in Progress...
-      </div>
+      </div> */}
     </div>
   );
 };
