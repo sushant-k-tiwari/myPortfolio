@@ -24,10 +24,23 @@ const Projects = () => {
         <div className="w-[50%] bg-white p-4 border-2 border-neutral-200 transition-transform duration-200 hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
           <div className="font-[vm-bold] text-2xl ml-4">Movies Search App</div>
           <div className="flex flex-row mt-2">
-            <button className="ml-4 font-[code] px-3 py-1 bg-neutral-100 h-fit w-fit cursor-pointer">
+            <button
+              className="ml-4 font-[code] px-3 py-1 bg-neutral-100 h-fit w-fit cursor-pointer"
+              onClick={() =>
+                window.open(
+                  "https://github.com/sushant-k-tiwari/movieApp",
+                  "_blank"
+                )
+              }
+            >
               Github
             </button>
-            <button className="ml-4 font-[code] px-3 py-1 bg-neutral-100 h-fit w-fit cursor-pointer">
+            <button
+              className="ml-4 font-[code] px-3 py-1 bg-neutral-100 h-fit w-fit cursor-pointer"
+              onClick={() =>
+                window.open("https://youtu.be/6_d0HLxKxiM", "_blank")
+              }
+            >
               YT Demo
             </button>
           </div>
@@ -84,10 +97,20 @@ const Projects = () => {
             Learning Management System Fullstack App
           </div>
           <div className="flex flex-row mt-2">
-            <button className="ml-4 font-[code] px-3 py-1 bg-neutral-100 h-fit w-fit cursor-pointer">
+            <button
+              className="ml-4 font-[code] px-3 py-1 bg-neutral-100 h-fit w-fit cursor-pointer"
+              onClick={() =>
+                window.open("https://github.com/sushant-k-tiwari/LMS", "_blank")
+              }
+            >
               Github
             </button>
-            <button className="ml-4 font-[code] px-3 py-1 bg-neutral-100 h-fit w-fit cursor-pointer">
+            <button
+              className="ml-4 font-[code] px-3 py-1 bg-neutral-100 h-fit w-fit cursor-pointer"
+              onClick={() =>
+                window.open("https://youtu.be/NugbhwSjZlc", "_blank")
+              }
+            >
               YT Demo
             </button>
           </div>
@@ -142,7 +165,12 @@ const Projects = () => {
             <button className="ml-4 font-[code] px-3 py-1 bg-neutral-100 h-fit w-fit cursor-pointer">
               Github
             </button>
-            <button className="ml-4 font-[code] px-3 py-1 bg-neutral-100 h-fit w-fit cursor-pointer">
+            <button
+              className="ml-4 font-[code] px-3 py-1 bg-neutral-100 h-fit w-fit cursor-pointer"
+              onClick={() =>
+                window.open("https://youtu.be/ccjRs6Dd2r4", "_blank")
+              }
+            >
               YT Demo
             </button>
           </div>
