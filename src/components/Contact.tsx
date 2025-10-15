@@ -1,130 +1,9 @@
+import { Mail, Github, Linkedin, MapPin } from "lucide-react";
+import { XIcon } from "./XIcon";
 import { useState } from "react";
 
 export const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const [errors, setErrors] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const [submitStatus, setSubmitStatus] = useState({
-    submitted: false,
-    success: false,
-    message: "",
-  });
-
-  const validateEmail = (email) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  };
-
-  const validateForm = () => {
-    let valid = true;
-    const newErrors = {
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    };
-
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
-      valid = false;
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-      valid = false;
-    } else if (!validateEmail(formData.email)) {
-      newErrors.email = "Please enter a valid email";
-      valid = false;
-    }
-
-    if (!formData.subject.trim()) {
-      newErrors.subject = "Subject is required";
-      valid = false;
-    }
-
-    if (!formData.message.trim()) {
-      newErrors.message = "Message is required";
-      valid = false;
-    }
-
-    setErrors(newErrors);
-    return valid;
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-
-    // Clear error when user starts typing
-    if (errors[name]) {
-      setErrors({
-        ...errors,
-        [name]: "",
-      });
-    }
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (!validateForm()) {
-      return;
-    }
-
-    setSubmitStatus({
-      submitted: true,
-      success: false,
-      message: "Sending message...",
-    });
-
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-
-      // Reset form after successful submission
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-
-      setSubmitStatus({
-        submitted: true,
-        success: true,
-        message: "Message sent successfully!",
-      });
-
-      // Clear success message after 5 seconds
-      setTimeout(() => {
-        setSubmitStatus({
-          submitted: false,
-          success: false,
-          message: "",
-        });
-      }, 5000);
-    } catch (error) {
-      setSubmitStatus({
-        submitted: true,
-        success: false,
-        message: "Failed to send message. Please try again.",
-      });
-    }
-  };
-
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
   return (
     <div className="relative z-10 p-8 flex flex-col items-center mt-24">
       <h1 className="text-5xl font-[docade] absolute top-9 text-neutral-600">
@@ -135,246 +14,137 @@ export const Contact = () => {
       <div className="w-[50%] mt-12">
         <p className="text-md font-[vm-regular] p-6 text-neutral-400">
           Have a project in mind or want to discuss potential opportunities? I'd
-          love to hear from you. Fill out the form below, and I'll get back to
-          you as soon as possible.
+          love to hear from you. Feel free to reach out through any of the
+          channels below.
         </p>
       </div>
 
-      <div className="w-[60%] mt-8 bg-white p-8 border-2 border-neutral-200 transition-transform duration-200 hover:shadow-[4px_4px_0px_0px_var(--color-black)]">
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <div className="flex flex-col md:flex-row gap-4">
-            <div className="flex flex-col w-full">
-              <label
-                htmlFor="name"
-                className="font-[code] text-lg text-neutral-800 mb-1"
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className={`p-3 border ${
-                  errors.name ? "border-red-500" : "border-neutral-300"
-                } font-[vm-regular]`}
-                placeholder="Your name"
-              />
-              {errors.name && (
-                <p className="text-red-500 text-xs mt-1 font-[vm-regular]">
-                  {errors.name}
-                </p>
-              )}
-            </div>
-            <div className="flex flex-col w-full">
-              <label
-                htmlFor="email"
-                className="font-[code] text-lg text-neutral-800 mb-1"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className={`p-3 border ${
-                  errors.email ? "border-red-500" : "border-neutral-300"
-                } font-[vm-regular]`}
-                placeholder="Your email"
-              />
-              {errors.email && (
-                <p className="text-red-500 text-xs mt-1 font-[vm-regular]">
-                  {errors.email}
-                </p>
-              )}
-            </div>
-          </div>
-
-          <div className="flex flex-col">
-            <label
-              htmlFor="subject"
-              className="font-[code] text-lg text-neutral-800 mb-1"
-            >
-              Subject
-            </label>
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              className={`p-3 border ${
-                errors.subject ? "border-red-500" : "border-neutral-300"
-              } font-[vm-regular]`}
-              placeholder="Subject of your message"
+      <div className="w-[80%] mt-12 flex flex-wrap justify-center gap-8">
+        {/* Email Box */}
+        <a
+          href="mailto:sushant22tiwari801@gmail.com"
+          className={`w-[250px] h-[200px] bg-white p-6 border-2 border-neutral-200 transition-all duration-300 ${
+            hoveredCard === "email"
+              ? "scale-105 shadow-[6px_6px_0px_0px_var(--color-black)] rotate-1 "
+              : "hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]"
+          } flex flex-col items-center justify-center cursor-pointer no-underline`}
+          onMouseEnter={() => setHoveredCard("email")}
+          onMouseLeave={() => setHoveredCard(null)}
+        >
+          <div
+            className={`flex justify-center items-center w-16 h-16 rounded-full bg-neutral-100 mb-4 transition-all duration-300 ${
+              hoveredCard === "email" ? "bg-sky-100" : ""
+            }`}
+          >
+            <Mail
+              size={32}
+              className={`transition-all duration-300 ${
+                hoveredCard === "email"
+                  ? "text-blue-500 scale-110"
+                  : "pulse-animation"
+              }`}
             />
-            {errors.subject && (
-              <p className="text-red-500 text-xs mt-1 font-[vm-regular]">
-                {errors.subject}
-              </p>
-            )}
           </div>
-
-          <div className="flex flex-col">
-            <label
-              htmlFor="message"
-              className="font-[code] text-lg text-neutral-800 mb-1"
-            >
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows={5}
-              className={`p-3 border ${
-                errors.message ? "border-red-500" : "border-neutral-300"
-              } font-[vm-regular] resize-none`}
-              placeholder="Your message"
-            />
-            {errors.message && (
-              <p className="text-red-500 text-xs mt-1 font-[vm-regular]">
-                {errors.message}
-              </p>
-            )}
-          </div>
-
-          <div className="mt-4">
-            <button
-              type="submit"
-              disabled={submitStatus.submitted && !submitStatus.success}
-              className="font-[code] px-6 py-3 bg-neutral-800 text-white hover:bg-neutral-700 transition-colors duration-200 disabled:bg-neutral-400"
-            >
-              {submitStatus.submitted && !submitStatus.success
-                ? "Sending..."
-                : "Send Message"}
-            </button>
-
-            {submitStatus.message && (
-              <p
-                className={`mt-4 ${
-                  submitStatus.success ? "text-green-600" : "text-red-500"
-                } font-[vm-regular]`}
-              >
-                {submitStatus.message}
-              </p>
-            )}
-          </div>
-        </form>
-      </div>
-
-      <div className="w-[60%] mt-12 flex flex-col md:flex-row justify-between gap-8">
-        <div className="flex flex-col items-center md:items-start">
           <h3 className="font-[vm-bold] text-xl mb-2">Email</h3>
-          <div className="flex items-center gap-2">
-            <a
-              href="mailto:sushant22tiwari801@gmail.com"
-              className="p-3 border-2 border-neutral-200 hover:shadow-[2px_2px_0px_0px_var(--color-black)] transition-all duration-200 flex items-center justify-center"
-            >
-              <svg
-                stroke="currentColor"
-                fill="currentColor"
-                strokeWidth="0"
-                viewBox="0 0 24 24"
-                height="20"
-                width="20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path fill="none" d="M0 0h24v24H0z"></path>
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
-              </svg>
-            </a>
-            <span className="font-[vm-regular] text-neutral-600">
-              sushant22tiwari801@gmail.com
-            </span>
-          </div>
-        </div>
+        </a>
 
-        <div className="flex flex-col items-center md:items-start">
-          <h3 className="font-[vm-bold] text-xl mb-2">Social</h3>
-          <div className="flex gap-4">
-            <a
-              href="https://github.com/sushant-k-tiwari"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 border-2 border-neutral-200 hover:shadow-[2px_2px_0px_0px_var(--color-black)] transition-all duration-200 flex items-center justify-center"
-            >
-              <svg
-                stroke="currentColor"
-                fill="currentColor"
-                strokeWidth="0"
-                viewBox="0 0 16 16"
-                height="20"
-                width="20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-              </svg>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/sushant-kumar-tiwari"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 border-2 border-neutral-200 hover:shadow-[2px_2px_0px_0px_var(--color-black)] transition-all duration-200 flex items-center justify-center"
-            >
-              <svg
-                stroke="currentColor"
-                fill="currentColor"
-                strokeWidth="0"
-                viewBox="0 0 16 16"
-                height="20"
-                width="20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
-              </svg>
-            </a>
-            <a
-              href="https://x.com/Sushant_KTiwari"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 border-2 border-neutral-200 hover:shadow-[2px_2px_0px_0px_var(--color-black)] transition-all duration-200 flex items-center justify-center"
-            >
-              <svg
-                stroke="currentColor"
-                fill="currentColor"
-                strokeWidth="0"
-                viewBox="0 0 512 512"
-                height="20"
-                width="20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path>
-              </svg>
-            </a>
+        {/* GitHub Box */}
+        <a
+          href="https://github.com/sushant-k-tiwari"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`w-[250px] h-[200px] bg-white p-6 border-2 border-neutral-200 transition-all duration-300 ${
+            hoveredCard === "github"
+              ? "scale-105 shadow-[6px_6px_0px_0px_var(--color-black)] -rotate-1"
+              : "hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]"
+          } flex flex-col items-center justify-center cursor-pointer no-underline`}
+          onMouseEnter={() => setHoveredCard("github")}
+          onMouseLeave={() => setHoveredCard(null)}
+        >
+          <div
+            className={`flex justify-center items-center w-16 h-16 rounded-full bg-neutral-100 mb-4 transition-all duration-300 ${
+              hoveredCard === "github" ? "bg-purple-100" : ""
+            }`}
+          >
+            <Github
+              size={32}
+              className={`transition-all duration-300 ${
+                hoveredCard === "github"
+                  ? "text-purple-700 scale-110"
+                  : "pulse-animation"
+              }`}
+            />
           </div>
-        </div>
+          <h3 className="font-[vm-bold] text-xl mb-2">GitHub</h3>
+        </a>
 
-        <div className="flex flex-col items-center md:items-start">
-          <h3 className="font-[vm-bold] text-xl mb-2">Location</h3>
-          <div className="flex items-center gap-2">
-            <div className="p-3 border-2 border-neutral-200 flex items-center justify-center">
-              <svg
-                stroke="currentColor"
-                fill="currentColor"
-                strokeWidth="0"
-                viewBox="0 0 24 24"
-                height="20"
-                width="20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path fill="none" d="M0 0h24v24H0z"></path>
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"></path>
-              </svg>
-            </div>
-            <p className="font-[vm-regular] text-neutral-600">Delhi, India</p>
+        {/* LinkedIn Box */}
+        <a
+          href="https://www.linkedin.com/in/sushant-kumar-tiwari"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`w-[250px] h-[200px] bg-white p-6 border-2 border-neutral-200 transition-all duration-300 ${
+            hoveredCard === "linkedin"
+              ? "scale-105 shadow-[6px_6px_0px_0px_var(--color-black)] rotate-1"
+              : "hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]"
+          } flex flex-col items-center justify-center cursor-pointer no-underline`}
+          onMouseEnter={() => setHoveredCard("linkedin")}
+          onMouseLeave={() => setHoveredCard(null)}
+        >
+          <div
+            className={`flex justify-center items-center w-16 h-16 rounded-full bg-neutral-100 mb-4 transition-all duration-300 ${
+              hoveredCard === "linkedin" ? "bg-sky-600" : ""
+            }`}
+          >
+            <Linkedin
+              size={32}
+              className={`transition-all duration-300 ${
+                hoveredCard === "linkedin"
+                  ? "text-white scale-110"
+                  : "pulse-animation"
+              }`}
+            />
           </div>
-        </div>
+          <h3 className="font-[vm-bold] text-xl mb-2">LinkedIn</h3>
+        </a>
+
+        {/* X (Twitter) Box */}
+        <a
+          href="https://x.com/Sushant_KTiwari"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`w-[250px] h-[200px] bg-white p-6 border-2 border-neutral-200 transition-all duration-300 ${
+            hoveredCard === "twitter"
+              ? "scale-105 shadow-[6px_6px_0px_0px_var(--color-black)] -rotate-1"
+              : "hover:scale-102 hover:shadow-[4px_4px_0px_0px_var(--color-black)]"
+          } flex flex-col items-center justify-center cursor-pointer no-underline`}
+          onMouseEnter={() => setHoveredCard("twitter")}
+          onMouseLeave={() => setHoveredCard(null)}
+        >
+          <div
+            className={`flex justify-center items-center w-16 h-16 rounded-full bg-neutral-100 mb-4 transition-all duration-300 ${
+              hoveredCard === "twitter" ? "bg-neutral-900 bg-opacity-10" : ""
+            }`}
+          >
+            <XIcon
+              size={28}
+              className={`transition-all duration-300 ${
+                hoveredCard === "twitter"
+                  ? "text-white scale-110"
+                  : "pulse-animation"
+              }`}
+            />
+          </div>
+          <h3 className="font-[vm-bold] text-xl mb-2">X (Twitter)</h3>
+        </a>
       </div>
+      <div className="flex flex-row items-center justify-center mt-16 gap-4">
+        <MapPin size={32} className="transition-all duration-300 " />
+        <h3 className="font-[vm-bold] text-xl mb-2">Location</h3>
+      </div>
+      <span className="font-[vm-regular] text-neutral-600 hover:text-neutral-800 transition-colors duration-200 text-center">
+        Delhi, India
+      </span>
     </div>
   );
 };
